@@ -1,5 +1,5 @@
 class RecipeFoodsController < ApplicationController
-  before_action :set_recipe_food, only: %i[ show edit update destroy ]
+  before_action :set_recipe_food, only: %i[show edit update destroy]
 
   # GET /recipe_foods or /recipe_foods.json
   def index
@@ -25,7 +25,7 @@ class RecipeFoodsController < ApplicationController
 
     respond_to do |format|
       if @recipe_food.save
-        format.html { redirect_to recipe_food_url(@recipe_food), notice: "Recipe food was successfully created." }
+        format.html { redirect_to recipe_food_url(@recipe_food), notice: 'Recipe food was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -36,7 +36,7 @@ class RecipeFoodsController < ApplicationController
   def update
     respond_to do |format|
       if @recipe_food.update(recipe_food_params)
-        format.html { redirect_to recipe_food_url(@recipe_food), notice: "Recipe food was successfully updated." }
+        format.html { redirect_to recipe_food_url(@recipe_food), notice: 'Recipe food was successfully updated.' }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -48,18 +48,19 @@ class RecipeFoodsController < ApplicationController
     @recipe_food.destroy
 
     respond_to do |format|
-      format.html { redirect_to recipe_foods_url, notice: "Recipe food was successfully destroyed." }
+      format.html { redirect_to recipe_foods_url, notice: 'Recipe food was successfully destroyed.' }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_recipe_food
-      @recipe_food = RecipeFood.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def recipe_food_params
-      params.require(:recipe_food).permit(:quantity)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_recipe_food
+    @recipe_food = RecipeFood.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def recipe_food_params
+    params.require(:recipe_food).permit(:quantity)
+  end
 end
