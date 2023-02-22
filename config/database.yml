@@ -59,7 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: Recipe_test
+  database: Recipe_App_test
   username: postgres
   password: 1234
 
