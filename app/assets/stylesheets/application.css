@@ -1,15 +1,257 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+th,
+td {
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
+
+table {
+  width: 100%;
+  border: 3px solid;
+  margin-bottom: 20px;
+}
+
+.notice {
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Tahoma', sans-serif;
+}
+
+#foods,
+#recipes,
+.shopping-list-contnr,
+.add-recipe-form,
+.recipe-detail {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.add-food-link,
+.add-recipe-link {
+  border: 1px solid;
+  border-radius: 5px;
+  height: 25px;
+  background: rgb(100, 34, 45);
+  text-decoration-line: none;
+  position: relative;
+  float: right;
+  bottom: 13px;
+  margin-top: 20px;
+  color: white;
+}
+
+.delete-food-btn,
+.modify-food-btn,
+.recipe-name-contnr button {
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: inherit;
+  color: rgba(0, 100, 255);
+  font-weight: bolder;
+  margin-top: 10px;
+  cursor: pointer;
+  text-decoration-line: underline;
+}
+
+.recipe-card {
+  display: flex;
+  align-items: center;
+  border: 3px solid;
+  padding: 15px;
+  column-gap: 30px;
+}
+
+.recipe-name-contnr {
+  width: 20%;
+  text-align: center;
+}
+
+.recipe-descrptn-contnr {
+  width: 100%;
+}
+
+.recipe-form-fields {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.create-recipe-btn input,
+.create-recipe_food-btn input {
+  background-color: inherit;
+  border: none;
+  height: inherit;
+  font-weight: bolder;
+  font-size: 18px;
+  color: #fff;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.create-recipe-btn,
+.create-recipe_food-btn,
+.actions input {
+  width: fit-content;
+  text-align: center;
+  background-color: rgb(100, 34, 45);
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.recipe-form-fields input,
+.add-food-form input,
+.add-recipe_food-form input,
+.signup-page form .field input,
+.login-page form .field input {
+  width: 100%;
+  min-height: 30px;
+  border: 2px solid;
+  border-radius: 3px;
+}
+
+.recipe-form-fields select,
+.add-recipe_food-form select {
+  width: 200px;
+  height: 30px;
+  border: 3px solid;
+  font-weight: bolder;
+}
+
+.recipe-link {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  color: black;
+  text-decoration-line: none;
+  cursor: pointer;
+}
+
+.recipe-link:visited {
+  color: black;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 27px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 27px;
+  width: 26px;
+  left: 6px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: green;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider::before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round::before {
+  border-radius: 50%;
+}
+
+.recipe-detail {
+  text-align: center;
+}
+
+.recipe-info {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.toogle-switch-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipe-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+hr {
+  height: 2px;
+  background-color: black;
+  margin: 20px 0;
+  border: none;
+}
+
+.login-page-container,
+.signup-page-container,
+.add-recipe_food-form-container,
+.add-food-form-container {
+  display: flex;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-page,
+.signup-page,
+.add-food-form,
+.add-recipe_food-form {
+  padding: 10px;
+  outline: none;
+  box-shadow: -1px -1px 2px 2px;
+  width: 98%;
+}
+
+.login-page form .field,
+.signup-page form .field,
+.add-recipe_food-form form .field,
+.add-food-form form .field {
+  margin-bottom: 10px;
+  font-weight: bolder;
+}
+
+footer {
+  padding: 10px;
+  text-align: center;
+}
