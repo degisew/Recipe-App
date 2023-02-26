@@ -1,27 +1,19 @@
 <div id="<%= dom_id recipe %>">
-  <p>
-    <strong>Name:</strong>
-    <%= recipe.name %>
-  </p>
-
-  <p>
-    <strong>Preparation time:</strong>
-    <%= recipe.preparation_time %>
-  </p>
-
-  <p>
-    <strong>Cooking time:</strong>
-    <%= recipe.cooking_time %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= recipe.description %>
-  </p>
-
-  <p>
-    <strong>Public:</strong>
-    <%= recipe.public %>
-  </p>
-
+  <div class="recipe-card">
+    <div class="recipe-name-contnr">
+      <%= link_to recipe_url(recipe), class: 'recipe-link' do %>
+        <h5>
+          <%= recipe.name %>
+        </h5>
+      <% end %>
+      <%= button_to 'Remove', recipe, method: :delete, data: { turbo_confirm: "Are you sure?"} %>
+    </div>
+    <%= link_to recipe_url(recipe), class: 'recipe-link' do %>
+      <div class="recipe-descrptn-contnr">
+        <p>
+          <%= recipe.description %>
+        </p>
+      </div>
+    <% end %>
+  </div><br>
 </div>

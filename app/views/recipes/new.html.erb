@@ -1,9 +1,12 @@
-<h1>New recipe</h1>
+<div class="add-recipe-form">
 
-<%= render "form", recipe: @recipe %>
+  <h1>New Recipe</h1>
 
-<br>
+  <%= render "form", recipe: @recipe %>
 
-<div>
-  <%= link_to "Back to recipes", recipes_path %>
+  <br>
+
+  <div>
+    <%= link_to "Back", recipes_path, class: 'recipe-back-btn' %>
+  </div>
 </div>

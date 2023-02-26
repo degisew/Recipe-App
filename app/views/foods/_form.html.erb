@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="field">
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :measurement_unit, style: "display: block" %>
     <%= form.text_field :measurement_unit %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :price, style: "display: block" %>
     <%= form.text_field :price %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :quantity, style: "display: block" %>
     <%= form.number_field :quantity %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="field">
+    <%= form.submit 'Add Food'%>
   </div>
 <% end %>

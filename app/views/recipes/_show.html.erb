@@ -1,0 +1,42 @@
+<div>
+  <div class="recipe-detail">
+    <h1 class="recipe-name"><%= recipe.name %></h1>
+    <div class="recipe-info">
+      <div class="toogle-switch-container">
+        <strong>Preparation Time:
+          <%= recipe.preparation_time %></strong>
+        <div style="display:flex; align-items: center; font-weight: bolder">
+          Public&nbsp; <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider round"></span>
+        </label>
+        </div>
+      </div>
+      <strong>Cooking Time:
+        <%= recipe.cooking_time %></strong>
+    </div>
+    <div class="recipe-btns">
+      <%= button_to 'Generate Shopping List', shopping_lists_url%>
+      <%= button_to 'Add Ingredient' %>
+    </div><hr>
+
+    <%= link_to 'Add Food', new_recipe_recipe_food_url(recipe), class: 'add-food-link' %>
+    <table style="margin-top: 5px">
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Value</th>
+        <th scope="col">Actions</th>
+      </tr>
+      <% recipe.recipe_foods.each do |recipe_food| %>
+        <tr>
+          <td><%= recipe_food.food.name%></td>
+          <td><%= recipe_food.quantity%></td>
+          <td><%= recipe_food.food.price%></td>
+          <td><%= button_to 'Delete', recipe_recipe_food_path(@recipe.id, recipe_food.id), method: :delete,
+                            data: { turbo_confirm: "Are you sure?"}, class: "delete-food-btn"%></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

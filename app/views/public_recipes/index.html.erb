@@ -1,0 +1,5 @@
+<div>
+  <% @public_recipes.each do |public_recipe| %>
+    <%=render 'index', recipe: public_recipe %>
+  <% end %>
+</div>

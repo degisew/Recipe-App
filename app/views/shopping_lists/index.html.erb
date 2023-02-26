@@ -1,0 +1,23 @@
+<div class='shopping-list-contnr'>
+  <div>
+    <div class='d-flex justify-content-evenly'>
+      <h4>Amount of food items to buy: <%= @shopping_lists.count %></h4>
+      <h4>Total price: <%= "$#{@total_price}" %></h4>
+    </div>
+    <table>
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+      </tr>
+      <% @shopping_lists.each do |shopping_list| %>
+        <tr>
+          <td><%= shopping_list.food.name%></td>
+          <td><%= shopping_list.quantity%></td>
+          <td><%= shopping_list.food.price%></td>
+        </tr>
+      <% end %>
+    </table>
+
+  </div>
+</div>

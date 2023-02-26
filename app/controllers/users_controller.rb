@@ -7,18 +7,12 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1 or /users/1.json
-  def show
-    @user = User.find_by_id(params[:id])
-  end
+  # def show
+  # end
 
   # GET /users/new
   def new
     @user = User.new
-  end
-
-  # GET /users/1/edit
-  def edit
-    render user_path
   end
 
   # POST /users or /users.json
@@ -30,17 +24,6 @@ class UsersController < ApplicationController
         format.html { redirect_to user_url(@user), notice: 'User was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /users/1 or /users/1.json
-  def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to user_url(@user), notice: 'User was successfully updated.' }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
       end
     end
   end
