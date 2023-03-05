@@ -1,57 +1,6 @@
-th,
-td {
-  border-bottom: 2px solid;
-  border-right: 2px solid;
-}
-
-table {
-  width: 100%;
-  border: 3px solid;
-  margin-bottom: 20px;
-}
-
-.notice {
-  text-align: center;
-  font-size: 20px;
-  font-family: 'Tahoma', sans-serif;
-}
-
-#foods,
-#recipes,
-.shopping-list-contnr,
-.add-recipe-form,
-.recipe-detail {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.add-food-link,
-.add-recipe-link {
-  border: 1px solid;
-  border-radius: 5px;
-  height: 25px;
-  background: rgb(100, 34, 45);
-  text-decoration-line: none;
-  position: relative;
-  float: right;
-  bottom: 13px;
-  margin-top: 20px;
-  color: white;
-}
-
-.delete-food-btn,
-.modify-food-btn,
-.recipe-name-contnr button {
-  border: none;
-  outline: none;
-  width: 100%;
-  background-color: inherit;
-  color: rgba(0, 100, 255);
-  font-weight: bolder;
-  margin-top: 10px;
-  cursor: pointer;
-  text-decoration-line: underline;
+nav {
+  background-color: rgba(240, 240, 240);
+  color: #fff;
 }
 
 .recipe-card {
@@ -62,57 +11,26 @@ table {
   column-gap: 30px;
 }
 
+.recipe-main-contnr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .recipe-name-contnr {
   width: 20%;
   text-align: center;
 }
 
-.recipe-descrptn-contnr {
-  width: 100%;
-}
-
-.recipe-form-fields {
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.create-recipe-btn input,
-.create-recipe_food-btn input {
-  background-color: inherit;
-  border: none;
-  height: inherit;
-  font-weight: bolder;
-  font-size: 18px;
-  color: #fff;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.create-recipe-btn,
-.create-recipe_food-btn,
-.actions input {
-  width: fit-content;
+.public-recipe-name-contnr {
+  width: 40%;
   text-align: center;
-  background-color: rgb(100, 34, 45);
-  height: 30px;
-  padding: 5px;
-  border-radius: 5px;
-  color: #fff;
 }
 
-.recipe-form-fields input,
-.add-food-form input,
-.add-recipe_food-form input,
-.signup-page form .field input,
-.login-page form .field input {
+.recipe-descrptn-contnr {
+  text-align: justify;
   width: 100%;
-  min-height: 30px;
-  border: 2px solid;
-  border-radius: 3px;
 }
 
 .recipe-form-fields select,
@@ -121,19 +39,6 @@ table {
   height: 30px;
   border: 3px solid;
   font-weight: bolder;
-}
-
-.recipe-link {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  color: black;
-  text-decoration-line: none;
-  cursor: pointer;
-}
-
-.recipe-link:visited {
-  color: black;
 }
 
 /* Toggle Switch */
@@ -213,45 +118,10 @@ input:checked + .slider::before {
   justify-content: space-between;
 }
 
-hr {
-  height: 2px;
-  background-color: black;
-  margin: 20px 0;
-  border: none;
-}
-
-.login-page-container,
-.signup-page-container,
-.add-recipe_food-form-container,
-.add-food-form-container {
-  display: flex;
-  height: 500px;
-  justify-content: center;
-  align-items: center;
-  width: 25%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.login-page,
-.signup-page,
-.add-food-form,
-.add-recipe_food-form {
-  padding: 10px;
-  outline: none;
-  box-shadow: -1px -1px 2px 2px;
-  width: 98%;
-}
-
-.login-page form .field,
-.signup-page form .field,
-.add-recipe_food-form form .field,
-.add-food-form form .field {
-  margin-bottom: 10px;
-  font-weight: bolder;
-}
-
 footer {
-  padding: 10px;
-  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #cbc4c4;
+  color: #fff;
 }
