@@ -1,4 +1,5 @@
-<div>
+<div style='text-align: center'>
+  <h1>Public recipes</h1><br>
   <% @public_recipes.each do |public_recipe| %>
     <%=render 'index', recipe: public_recipe %>
   <% end %>

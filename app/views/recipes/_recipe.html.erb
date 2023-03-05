@@ -1,14 +1,14 @@
 <div id="<%= dom_id recipe %>">
   <div class="recipe-card">
     <div class="recipe-name-contnr">
-      <%= link_to recipe_url(recipe), class: 'recipe-link' do %>
+      <%= link_to recipe_url(recipe), class: 'text-dark text-decoration-none' do %>
         <h5>
           <%= recipe.name %>
         </h5>
       <% end %>
-      <%= button_to 'Remove', recipe, method: :delete, data: { turbo_confirm: "Are you sure?"} %>
+      <%= button_to 'Remove', recipe, method: :delete, data: { turbo_confirm: "Are you sure?"}, class: 'btn btn-danger' %>
     </div>
-    <%= link_to recipe_url(recipe), class: 'recipe-link' do %>
+    <%= link_to recipe_url(recipe), class: 'text-dark text-decoration-none' do %>
       <div class="recipe-descrptn-contnr">
         <p>
           <%= recipe.description %>

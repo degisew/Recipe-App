@@ -1,13 +1,10 @@
-<div class="add-food-form-container">
-<div class="add-food-form">
-<h1>New food</h1>
+<div class='card mt-5'  style='width: 30rem; margin-right: auto; margin-left: auto'>
+  <div class='card-header'>
+    <h3>Add New Food</h3>
+  </div>
 
 <%= render "form", food: @food %>
-
-<br>
-
-<div>
+  <div class='p-2'>
   <%= link_to "Back to foods", foods_path %>
-</div>
 </div>
 </div>

@@ -1,7 +1,11 @@
-<div id="recipes">
+<div class='container text-center w-50 mx-auto pt-3'>
+  <%if @recipes.empty? %>
+    <p>Sorry, You haven't added any Recipes yet. Please add some!</p>
+  <%else %>
   <% @recipes.each do |recipe| %>
     <%= render recipe %>
   <% end %>
-  <%= link_to "Add New recipe", new_recipe_path, class: 'add-recipe-link' %>
+  <% end %>
+  <%= link_to "Add New recipe", new_recipe_path, class: 'btn btn-primary' %>
 </div>
 

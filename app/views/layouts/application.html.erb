@@ -15,16 +15,16 @@
 
 <body>
 <%= render "shared/header" %>
-
-
 <%if flash[:notice]%>
-  <div  class='notice alert alert-success'>
-  <%= notice %>
+  <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+    <p><%= notice %></p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 <%end%>
 <%if flash[:alert]%>
-  <div class='alert alert-danger'>
-  <%= alert %>
+  <div class="alert alert-danger alert-dismissible fade show text-center"  role="alert">
+    <p><%= alert %></p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 <%end%>
 <div class="container", style="min-height: 84vh;">

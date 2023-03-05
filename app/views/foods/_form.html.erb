@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class='field p-2'>
+    <%= form.label :name, class: 'form-label' %><br />
+    <%= form.text_field :name, autofocus: true, autocomplete: 'name', class:'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :measurement_unit, style: "display: block" %>
-    <%= form.text_field :measurement_unit %>
+  <div class="field p-2">
+    <%= form.label :measurement_unit, class: 'form-label' %>
+    <%= form.text_field :measurement_unit, class:'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price %>
+  <div class="field p-2">
+    <%= form.label :price, class: 'form-label' %>
+    <%= form.text_field :price, class:'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :quantity, style: "display: block" %>
-    <%= form.number_field :quantity %>
+  <div class="field p-2">
+    <%= form.label :quantity, class: 'form-label' %>
+    <%= form.number_field :quantity, class:'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.submit 'Add Food'%>
+  <div class="field p-2">
+    <%= form.submit 'Add Food', class: 'btn btn-secondary'%>
   </div>
 <% end %>

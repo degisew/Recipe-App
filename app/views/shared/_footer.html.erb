@@ -1,8 +1,8 @@
-<footer class="bg-dark text-center text-lg-start">
-  <!-- Copyright -->
-  <div class="text-center p-3t text-light footer" >
-    <a class="text-blue text-decoration-none" href="https://github.com/degisew">Degisew Mengist</a><br>
-    © 2023 Copyright
-  </div>
-  <!-- Copyright -->
-</footer>
+<%if user_signed_in? %>
+  <footer class='text-center mt-5 '>
+    <div class= 'text-center p-3' >
+      © 2023 Copyright:
+      <a class="text-blue text-decoration-none text-grey" href="https://github.com/degisew">Degisew Mengist</a>
+    </div>
+  </footer>
+<%end %>

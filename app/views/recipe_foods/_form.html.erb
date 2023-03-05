@@ -11,17 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :quantity, style: "display: block" %>
-    <%= form.number_field :quantity %>
+  <div class='field p-2'>
+    <%= form.label :quantity, class: 'form-label'  %>
+    <%= form.number_field :quantity, class:'form-control' %>
   </div>
-
-  <div class="field">
+  <div class='add-recipe_food-form p-2'>
     <%= form.label :food, style: "display: block" %>
     <%= form.collection_select :food_id, @all_foods, :id, :name %>
   </div>
 
-  <div class="create-recipe_food-btn">
-    <%= form.submit %>
+  <div class='field p-2'>
+    <%= form.submit 'Save', class: 'btn btn-primary' %>
   </div>
 <% end %>

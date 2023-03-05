@@ -1,31 +1,30 @@
+<div class='card mt-5'  style='width: 30rem; margin-right: auto; margin-left: auto'>
+  <div class='card-header'>
+    <h2>Log in</h2>
+  </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class='form-group p-2'>
+      <%= f.label :email,class: 'form-label' %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+    </div>
 
-<div class="login-page-container">
-  <div class="login-page">
-    <h3> Welcome to recipe app</h3>
+    <div class='form-group p-2'>
+      <%= f.label :password,class: 'form-label' %><br />
+      <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
+    </div>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field mb-3">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
-
-      <div class="field mb-3">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "current-password" %>
-      </div>
-
-      <% if devise_mapping.rememberable? %>
-        <div class="checkbox-field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </div>
-      <% end %>
-
-      <div class="actions">
-        <%= f.submit "Log in", class: "btn btn-dark mt-10 mb-10" %>
+    <% if devise_mapping.rememberable? %>
+      <div class='form-group p-2'>
+        <%= f.check_box :remember_me, class: 'form-check-input' %>
+        <%= f.label :remember_me,class: 'form-check-label'  %>
       </div>
     <% end %>
 
-    <%= render "devise/shared/links" %>
+    <div class='actions p-2'>
+      <%= f.submit 'Log in', class: 'btn btn-secondary' %>
+    </div>
+  <% end %>
+  <div class='actions p-2'>
+    <%= render 'devise/shared/links' %>
   </div>
 </div>

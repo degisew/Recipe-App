@@ -11,32 +11,32 @@
     </div>
   <% end %>
 
-  <div class="recipe-form-fields">
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class='field p-2'>
+    <%= form.label :name, class: 'form-label' %><br />
+    <%= form.text_field :name, autofocus: true, autocomplete: 'name', class:'form-control' %>
   </div>
 
-  <div class="recipe-form-fields">
-    <%= form.label :preparation_time, style: "display: block" %>
-    <%= form.text_field :preparation_time %>
+  <div class='field p-2'>
+    <%= form.label :preparation_time, class: 'form-label' %>
+    <%= form.text_field :preparation_time, class:'form-control' %>
   </div>
 
-  <div class="recipe-form-fields">
-    <%= form.label :cooking_time, style: "display: block" %>
-    <%= form.text_field :cooking_time %>
+  <div class='field p-2'>
+    <%= form.label :cooking_time, class: 'form-label' %>
+    <%= form.text_field :cooking_time, class:'form-control' %>
   </div>
 
-  <div class="recipe-form-fields">
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description, style: "min-height: 100px; min-width: 400px" %>
+  <div class='field p-2'>
+    <%= form.label :description,class: 'form-label' %>
+    <%= form.text_area :description, class:'form-control', style: "min-height: 100px; min-width: 400px" %>
   </div>
 
-  <div class="recipe-form-fields">
-    <%= form.label :public, style: "display: block" %>
-    <%= form.select :public , [["Yes", true], ["No", false] ], selected: true  %>
+  <div class='recipe-form-fields p-2'>
+    <%= form.label :public, class: 'form-label' %>
+    <%= form.select :public , [["Yes", true], ["No", false] ], selected: true,  class: 'dropdown'%>
   </div>
 
-  <div class='create-recipe-btn'>
-    <%= form.submit %>
+  <div class='field p-2'>
+    <%= form.submit 'Add Recipe', class: 'btn btn-secondary' %>
   </div>
 <% end %>

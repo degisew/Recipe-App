@@ -1,5 +1,5 @@
-<div>
-  <div class="recipe-detail">
+<div class='recipe-main-contnr'>
+  <div class="recipe-detail w-50">
     <h1 class="recipe-name"><%= recipe.name %></h1>
     <div class="recipe-info">
       <div class="toogle-switch-container">
@@ -16,27 +16,32 @@
         <%= recipe.cooking_time %></strong>
     </div>
     <div class="recipe-btns">
-      <%= button_to 'Generate Shopping List', shopping_lists_url%>
-      <%= button_to 'Add Ingredient' %>
+      <%= link_to 'Generate Shopping List', shopping_lists_url, class: 'btn btn-outline-primary text-dark'%>
+      <%= link_to 'Add Ingredient', class: 'btn btn-outline-primary text-dark'%>
     </div><hr>
 
-    <%= link_to 'Add Food', new_recipe_recipe_food_url(recipe), class: 'add-food-link' %>
-    <table style="margin-top: 5px">
-      <tr>
+    <%= link_to 'Add Food to shopping list', new_recipe_recipe_food_url(recipe), class: 'btn btn-primary text-light mb-3' %>
+    <%if recipe.recipe_foods.empty? %>
+      <p>Sorry, You haven't added any food to your list. please add some!</p>
+      <%else %>
+    <table class='table table-hover w-100 mx-auto table-bordered'>
+      <thead class='table-secondary'>
         <th scope="col">Food</th>
         <th scope="col">Quantity</th>
         <th scope="col">Value</th>
         <th scope="col">Actions</th>
       </tr>
+      </thead>
       <% recipe.recipe_foods.each do |recipe_food| %>
         <tr>
           <td><%= recipe_food.food.name%></td>
           <td><%= recipe_food.quantity%></td>
           <td><%= recipe_food.food.price%></td>
           <td><%= button_to 'Delete', recipe_recipe_food_path(@recipe.id, recipe_food.id), method: :delete,
-                            data: { turbo_confirm: "Are you sure?"}, class: "delete-food-btn"%></td>
+                            data: { turbo_confirm: "Are you sure?"}, class: "btn btn-danger"%></td>
         </tr>
       <% end %>
     </table>
+      <% end %>
   </div>
 </div>

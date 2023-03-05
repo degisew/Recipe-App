@@ -1,14 +1,20 @@
-<div id="foods">
-  <%= link_to "Add New food", new_food_path, class: 'add-food-link'%>
-  <table>
+<div id="foods" style="display: flex; align-items: center; flex-direction: column">
+  <%= link_to "Add New food", new_food_path, class: 'w-0 btn btn-primary position-relative'%><br>
+  <%if @foods.empty? %>
+  <p>Sorry, You haven't added any food yet. Please add some!</p>
+    <%else %>
+   <table class="table table-striped table-sm table-hover table-bordered mt-3 w-50">
+     <thead class="table-primary">
     <tr>
       <th scope="col">Food</th>
       <th scope="col">Measurement unit</th>
       <th scope="col">Unit price</th>
       <th scope="col">Action</th>
     </tr>
+    </thead>
     <% @foods.each do |food| %>
       <%= render food %>
     <% end %>
   </table>
+  <%end %>
 </div>
